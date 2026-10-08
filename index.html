@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dontgetdeported.nl — Onboarding</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#1e2a47',
+          'navy-soft': '#4a5b82',
+          orange: { DEFAULT: '#ea5b2f', dark: '#d94e24' },
+          cream: '#f4efe4',
+          line: '#e4ded0',
+          leaf: '#1f9d55',
+          muted: '#8a94a6'
+        },
+        boxShadow: {
+          phone: '0 30px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04)',
+          cta: '0 10px 20px rgba(234,91,47,0.28)'
+        },
+        borderRadius: { phone: '38px', screen: '26px' }
+      }
+    }
+  }
+</script>
+<style>
+  html, body { height: 100%; }
+  body {
+    background: radial-gradient(circle at 30% 20%, #2b3a5e 0%, #141c33 65%, #0e1424 100%);
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.4); }
+</style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col">
+
+  <!-- Persistent top bar -->
+  <header class="flex-none flex items-center gap-2.5 px-5 sm:px-8 py-3.5 sm:py-4 text-white">
+    <div class="w-8 h-8 rounded-full border-2 border-orange flex items-center justify-center text-orange font-extrabold text-[13px] flex-none">⚑</div>
+    <div class="font-extrabold text-[15px] sm:text-base">dontgetdeported<span class="text-orange">.nl</span></div>
+  </header>
+
+  <!-- Fills the full remaining viewport at every breakpoint -->
+  <main class="flex-1 min-h-0 flex justify-center p-0 sm:p-4 md:p-6">
+    <div id="app-shell" class="w-full h-full max-w-xl transition-[max-width] duration-300">
+      <div id="screen" class="bg-white sm:rounded-3xl shadow-2xl h-full overflow-y-auto relative flex flex-col"></div>
+    </div>
+  </main>
+
+  <p class="flex-none text-center text-[11px] leading-relaxed text-slate-400 pb-3 px-4 hidden sm:block">
+    Answers are kept in memory for this session (in-app "local save"), so you can go back and forth without losing anything.
+  </p>
+
+  <script src="app.js"></script>
+</body>
+</html>
